@@ -1,0 +1,33 @@
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/ysyc_erp?serverTimezone=Hongkong&useUnicode=true&characterEncoding=utf8&useSSL=false&useAffectedRows=true
+      username: root
+      #      password: password
+      #      url: jdbc:mysql://192.168.10.200:3306/ysyc_erp?serverTimezone=Hongkong&useUnicode=true&characterEncoding=utf8&useSSL=false&useAffectedRows=true
+      #      username: root
+      password: 123456
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT1FROMDUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      filters: stat,wall,log4j
+mybatis:
+  mapper-locations: classpath:mapper/dao/*.xml,classpath:dao/*.xml
+
+system:
+  dadacenterId: 0
+  machineid: 0
